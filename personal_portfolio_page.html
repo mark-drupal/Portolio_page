@@ -1,0 +1,111 @@
+<html>
+
+<!--  This is my version of the personal portfolio page project which forms a part of the freecodecamp
+projects for the responsive webdesign tutorial.  To see my profile on freecodecamp, see the following page:
+
+	https://www.freecodecamp.org/mark-ian-newton
+-->
+
+	<!--This section will hold all the CSS style for the page -->
+
+	<style>
+
+	#container {
+		display: grid;
+		height: auto;
+		width: 100%;
+
+
+	}
+
+	#navbar {
+		/* User Story #11 - ensure the nav bar is at the top of the page all the time */
+		position: fixed;
+		border: 3px solid black;
+
+		height: 100%;
+		width: 90%;
+
+		text-align: right;
+
+	}
+
+	#welcome-section {
+		position: center;
+		width: 100%;
+		height: 100%;
+		text-align: center;
+		left: 0;
+		position:absolute;
+
+	}
+
+	#projects {
+
+	}
+
+	#profile-section{
+
+	}
+	/*****************************
+	*	Mobile phone optimisation
+	*****************************/
+
+	/*This is User Story #9 - which is a media query for phones */
+	@media(max-width: 800px){
+
+
+
+	}
+
+	</style>
+
+	<head>
+		<title>Welcome to Mark Newtons Personal Portfolio website</title>
+	</head>
+
+	<body>
+					<!--This is the script for testing the project -->
+			<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+
+			<!-- setting the view port -->
+
+
+
+		<div id="container">
+			<!--This is user story #6 - the navbar -->
+			<nav id="navbar">
+				<!-- This is userstory #7 - Nav bar to link to differnt parts of the page-->
+				<a href="#projects" class="nav-link" >Projects</a>
+				<a href="#profile-section" class="nav-link" >Profile</a>
+			</nav>
+
+		<!--This is user Story #1 - the wecome section-->
+		<div id="welcome-section">
+			<!--This is user Story 10 - which ensures that the welcome section height is equal to the view point -->
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+			<!--This is user story #2 - the h1 tag - welcome message-->
+			<h1>Hey I am Mark</h1>
+			<i>I am a web developer</i>
+		</div>
+
+		<!--This is user story #3 - the projects section -->
+		<div id="projects">
+			<!-- User Story #4 - at least one section with the class project tile - this will hold all the projects I have worked on -->
+			<div class="project-tile">
+				<!--This is user story #5 - a link to a project-->
+				<a href="https://codepen.io/mark-drupal/pen/gOYeBBy" ><h2>Tribute Page</h2></a>
+			</div>
+		</div>
+
+		<!--User Story #8 - the profile section -->
+		<div id="profile-section">
+			<a href="https://www.freecodecamp.org/mark-ian-newton" id="profile-link" target="_blank">Freecodecamp link</a>
+		</div>
+
+	</div>
+
+
+	</body>
+</html>
