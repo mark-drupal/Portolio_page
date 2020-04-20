@@ -1,3 +1,4 @@
+
 <html>
 
 <!--  This is my version of the personal portfolio page project which forms a part of the freecodecamp
@@ -11,42 +12,288 @@ projects for the responsive webdesign tutorial.  To see my profile on freecodeca
 	<style>
 
 	#container {
-		display: grid;
-		height: auto;
-		width: 100%;
 
+		/*set width and height*/
+		width: 100%;
+		height: 100%;
+
+
+		/*CSS Grid Settings*/
+		display: grid;
+
+		/*grid is just rows with 1 column*/
+		grid-template-rows: [nav] min-content [welcome] min-content [projects] min-content [profile] min-content;
+		grid-template-columns: [main-column] auto;
+
+
+		grid-gap: 0px 0px;
+
+		align-items: stretch;
+		justify-items: stretch;
 
 	}
 
+	body{
+		font-family: 'Poppins', sans-serif;
+		font-size: 1.8rem;
+		font-weight: 400;
+		line-height: 1.4;
+		color: white;
+		text-align: center;
+	}
+
+	h1 {
+		 font-family: 'Raleway', sans-serif;
+		 font-weight: 700;
+		 text-align: center;
+		 font-size: 6rem;
+		 line-height: 1.4;
+
+	 }
+	 h2{
+		 font-size: 2.2rem;
+		 font-family: 'Raleway', sans-serif;
+		 font-weight: 700;
+		 text-align: center;
+	 }
+
+	 a{
+		 color: white;
+		 text-decoration: none;
+	 }
+
 	#navbar {
+
+		box-sizing: border-box;
 		/* User Story #11 - ensure the nav bar is at the top of the page all the time */
 		position: fixed;
-		border: 3px solid black;
 
-		height: 100%;
-		width: 90%;
+		/*Some positioning*/
+		top: 0%;
+		left: 0%;
+		width: 100%;
+		height: auto%;
 
-		text-align: right;
+		/*Formatting*/
+		background-color: #be3144;
 
+		/*Grid settings for the nav links which are class nav-link*/
+		display: grid;
+
+		/*define template - just 1 row - but 3 columns*/
+		grid-template-columns: [header] auto [project-link] min-content [profile-link] min-content;
+		grid-template-rows: [nav] auto;
+		grid-gap: 0px 0px;
+	}
+
+	#project-link{
+		/*position in container div*/
+		grid-column: project-link / project-link;
+		grid-row: nav / nav;
+		align-self: stretch;
+	}
+
+	#profile-link{
+		/*position in container div*/
+		grid-column: profile-link / profile-link;
+		grid-row: nav / nav;
+		align-self: stretch;
+	}
+
+
+	.nav-link {
+		/*font formatting*/
+		font-family: 'poppins', sans-serif;
+		color: white;
+		font-size: 2.2rem;
+		font-weight: 400;
+		line-height: 1.4;
+		/*remove the underline from the links*/
+		text-decoration: none;
+		margin: 0;
+	}
+
+	/*hover color*/
+	.nav-link a:hover {
+		background-color: 45567d;
 	}
 
 	#welcome-section {
-		position: center;
-		width: 100%;
-		height: 100%;
-		text-align: center;
-		left: 0;
-		position:absolute;
 
+		box-sizing: border-box;
+
+		/*position in container div*/
+		grid-column: main-column / main-column;
+		grid-row: welcome / welcome;
+
+
+		width: 100%;
+		height: 100vh;
+
+
+		/*page formatting*/
+		background-color: #000;
+		background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+
+		/*format text*/
+		text-align: center;
+		color: white;
+	}
+
+	#welcome-section p{
+		font-size: 3rem;
+		font-weight: 200;
+		font-style: italic;
+		color: #be3144;
+		line-height: 1.4;
 	}
 
 	#projects {
 
+		box-sizing: border-box;
+
+		/*position in container div*/
+		grid-column: main-column / main-column;
+		grid-row: projects / projects;
+
+		justify-self: stretch;
+		align-self: stretch;
+
+
+		height: auto;
+		width: 100%;
+
+		background-color: #45567d;
+
+		/*define a flex box to hold the projects grid*/
+
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		align-content: center;
+
 	}
+
+	#projects-grid{
+		/*define a grid*/
+		display: grid;
+		/*define template - just 3 columns many rows*/
+
+		margin: 4rem;
+		padding: 10rem 2rem 2rem 10rem;
+
+		grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+		max-width: 1200px;
+		grid-gap: 4rem 4rem;
+		align-items: center;
+		justify-items: center;
+	}
+
+	.project-tile{
+		width: 100%;
+		height: 100%;
+		align-self: center;
+		justify-self: center;
+		background-color: #303841;
+		box-shadow: 1px;
+	}
+	.project-tile p{
+		font-size: 1.2rem;
+		padding: 2rem 0.5rem;
+	}
+	.project-image{
+		height: calc(100% - 6rem);
+		width: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	.project-title{
+		box-sizing: border-box;
+		text-align: center;
+		color: white;
+		text-decoration: none;
+		height: 100%;
+		width: 100%;
+	}
+
 
 	#profile-section{
 
+		box-sizing: border-box;
+
+		/*position in container div*/
+		grid-column: main-column / main-column;
+		grid-row: profile/ profile;
+
+		justify-self: end;
+		align-self: stretch;
+
+		height: 100vh;
+		width: 100%;
+		padding: 2rem;
+
+
+		background-color: #000;
+		background-image: linear-gradient(62deg, #3a3d40 0%, #181719 100%);
+
+		display: flex;
+		flex-direction: column;
+
+		justify-content: center;
+		align-items: center;
+
+
 	}
+
+	#profile-banner{
+		text-align: center;
+
+	}
+
+	#profile-banner p{
+		font-style: italic;
+	}
+
+	#profile-banner h2{
+		font-size: 4.2rem;
+	}
+
+	#icons-grid{
+		/*define a flexbox to hod the icons*/
+		display: flex;
+		flex-direction: row;
+	}
+
+	.icon-link{
+		color: white;
+		font-size: 2.4rem;
+		text-shadow: 2px 2px 1px black;
+		text-align: center;
+		font-weight: 400;
+		font-family: "Font Awesome 5 Brands";
+		text-decoration: none;
+	}
+	.icon-link:hover{
+		transform: translateY(8px);
+	}
+
+	#profile-link{
+
+	}
+
+	#github-link{
+
+	}
+
+	#drupal-link{
+
+	}
+
+	#twitter-link{
+
+	}
+
 	/*****************************
 	*	Mobile phone optimisation
 	*****************************/
@@ -66,43 +313,101 @@ projects for the responsive webdesign tutorial.  To see my profile on freecodeca
 
 	<body>
 					<!--This is the script for testing the project -->
-			<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+		<script src="https://cdn.freecodecamp.org/testable-projects-fcc/v1/bundle.js"></script>
+		<!--Sets the view point for the document -->
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<!--Link for icons -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 			<!-- setting the view port -->
 
-
-
-		<div id="container">
 			<!--This is user story #6 - the navbar -->
+
 			<nav id="navbar">
 				<!-- This is userstory #7 - Nav bar to link to differnt parts of the page-->
-				<a href="#projects" class="nav-link" >Projects</a>
-				<a href="#profile-section" class="nav-link" >Profile</a>
+
+				<div class="nav-link" id="project-link">
+					<a href="#projects" class="nav-link">Projects</a>
+				</div>
+				<div class="nav-link" id="profile-link">
+					<a href="#profile-section" class="nav-link">Profile</a>
+				</div>
 			</nav>
 
+	<div id="container">
+
 		<!--This is user Story #1 - the wecome section-->
-		<div id="welcome-section">
-			<!--This is user Story 10 - which ensures that the welcome section height is equal to the view point -->
-			<meta name="viewport" content="width=device-width, initial-scale=1.0">
+			<div id="welcome-section">
+				<!--This is user Story 10 - which ensures that the welcome section height is equal to the view point -->
 
-			<!--This is user story #2 - the h1 tag - welcome message-->
-			<h1>Hey I am Mark</h1>
-			<i>I am a web developer</i>
-		</div>
 
-		<!--This is user story #3 - the projects section -->
-		<div id="projects">
-			<!-- User Story #4 - at least one section with the class project tile - this will hold all the projects I have worked on -->
-			<div class="project-tile">
-				<!--This is user story #5 - a link to a project-->
-				<a href="https://codepen.io/mark-drupal/pen/gOYeBBy" ><h2>Tribute Page</h2></a>
+				<!--This is user story #2 - the h1 tag - welcome message-->
+				<h1>Hey I am Mark</h1>
+				<p>I am a web developer</p>
 			</div>
-		</div>
 
-		<!--User Story #8 - the profile section -->
-		<div id="profile-section">
-			<a href="https://www.freecodecamp.org/mark-ian-newton" id="profile-link" target="_blank">Freecodecamp link</a>
-		</div>
+			<!--This is user story #3 - the projects section -->
+			<div id="projects">
+				<h2>These are some of my projects</h2>
+				<div id="projects-grid">
+					<!-- User Story #4 - at least one section with the class project tile - this will hold all the projects I have worked on -->
+					<a class="project-tile" href="https://codepen.io/mark-drupal/pen/gOYeBBy" id="tribute-page">
+						<!--image for project -->
+						<img class="project-image" src="images/tribute-page.jpg" alt="A tribute page to Dr Norman Borlaug - part of the freecodecamp projects">
+						<!--This is user story #5 - a link to a project-->
+						<p class="project-title">Tribute Page</p>
+					</a>
+					<a class="project-tile" href="https://codepen.io/mark-drupal/pen/NWWNJaq" id="technical-documentation">
+						<!--image for project -->
+						<img class="project-image" src="images/technical-documenation.jpg" alt="A technical documentation page example - a part freecodecamp projects">
+						<!--This is user story #5 - a link to a project-->
+						<p class="project-title">Technical Documentation</p>
+					</a>
+					<a class="project-tile" href="https://codepen.io/mark-drupal/pen/PoYLjaG" id="technical-documentation">
+						<!--image for project -->
+						<img class="project-image" src="images/survey-form.jpg" alt="An exmaple of a survey form - a part freecodecamp projects">
+						<!--This is user story #5 - a link to a project-->
+						<p class="project-title">Survey Form</p>
+					</a>
+
+				</div>
+			</div>
+
+			<!--User Story #8 - the profile section -->
+			<div id="profile-section">
+				<div id="profile-banner">
+					<h2>Lets work together...</h2>
+					<p>How do you take your coffee?</p>
+				</div>
+
+				<div id="icon-grid">
+					<a href="https://www.freecodecamp.org/mark-ian-newton" target="_blank" id="profile-link">
+						<!--freecodecamp-->
+						<i class="fa fa-free-code-camp icon-link">
+							freecodecamp
+						</i>
+
+					</a>
+					<a id="github-link" href="https://github.com/mark-drupal" target="_blank">
+						<!--GitHub-->
+						<i class="fa fa-github icon-link">
+							GitHub
+						</i>
+					</a>
+					<a id="drupal-link" href="https://www.drupal.org/u/mark_ian_newton">
+						<!--Drupal-->
+						<i class="fa fa-drupal icon-link">
+							Drupal
+						</i>
+					</a>
+					<a id="twitter-link" href="https://twitter.com/DrupalMark">
+						<!--Drupal-->
+						<i class="fa fa-twitter-square">
+							Twitter
+						</i>
+					</a>
+				</div>
+			</div>
 
 	</div>
 
